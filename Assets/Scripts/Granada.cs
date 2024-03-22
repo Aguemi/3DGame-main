@@ -6,6 +6,7 @@ public class Granada : MonoBehaviour
 {
    public float interval;
    private float timer = 0;
+   public GameObject ExplosionModel;
 
 
     void Update()
@@ -13,6 +14,7 @@ public class Granada : MonoBehaviour
         timer += Time.deltaTime; 
         if (timer > interval)
         {
+            Instantiate(ExplosionModel, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
